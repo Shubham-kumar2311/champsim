@@ -248,6 +248,14 @@ bool CACHE::handle_fill(const mshr_type& fill_mshr)
     else
         way->memory_type = 1; // NVM
 
+    // Count access for MISS cases (not WRITE or PREFETCH)
+    if (fill_mshr.type != access_type::WRITE && fill_mshr.type != access_type::PREFETCH) {
+        if (channel == 0)
+            sim_stats.dram_accesses++;
+        else
+            sim_stats.nvm_accesses++;
+    }
+
     // initialize counters
     way->current_hit_counter = 0;
   }
@@ -298,10 +306,13 @@ bool CACHE::try_hit(const tag_lookup_type& handle_pkt)
     sim_stats.hits.increment(std::pair{handle_pkt.type, handle_pkt.cpu});
 
     if (handle_pkt.type != access_type::WRITE) {
-      if (way->memory_type == 0)
+      if (way->memory_type == 0) {
         sim_stats.dram_hits++;
-      else
+        sim_stats.dram_accesses++;
+      } else {
         sim_stats.nvm_hits++;
+        sim_stats.nvm_accesses++;
+      }
     }
 
     response_type response{handle_pkt.address, handle_pkt.v_address, way->data, metadata_thru, handle_pkt.instr_depend_on_me};
@@ -910,6 +921,8 @@ void CACHE::end_phase(unsigned finished_cpu)
   roi_stats.total_accesses = sim_stats.total_accesses;
   roi_stats.dram_hits = sim_stats.dram_hits;
   roi_stats.nvm_hits = sim_stats.nvm_hits;
+  roi_stats.dram_accesses = sim_stats.dram_accesses;
+  roi_stats.nvm_accesses = sim_stats.nvm_accesses;
 
   for (auto* ul : upper_levels) {
     ul->roi_stats.RQ_ACCESS = ul->sim_stats.RQ_ACCESS;

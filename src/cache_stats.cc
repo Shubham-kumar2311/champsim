@@ -11,6 +11,8 @@ cache_stats operator-(cache_stats lhs, cache_stats rhs)
   result.total_accesses = lhs.total_accesses - rhs.total_accesses;
   result.dram_hits = lhs.dram_hits - rhs.dram_hits;
   result.nvm_hits = lhs.nvm_hits - rhs.nvm_hits;
+  result.dram_accesses = lhs.dram_accesses - rhs.dram_accesses;
+  result.nvm_accesses = lhs.nvm_accesses - rhs.nvm_accesses;
 
   result.hits = lhs.hits - rhs.hits;
   result.misses = lhs.misses - rhs.misses;

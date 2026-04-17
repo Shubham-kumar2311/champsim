@@ -54,11 +54,13 @@ void to_json(nlohmann::json& j, const CACHE::stats_type& stats)
     statsmap.emplace("total accesses", stats.total_accesses);
     statsmap.emplace("dram hits", stats.dram_hits);
     statsmap.emplace("nvm hits", stats.nvm_hits);
+    statsmap.emplace("dram accesses", stats.dram_accesses);
+    statsmap.emplace("nvm accesses", stats.nvm_accesses);
 
     const double dram_hit_rate =
-      (stats.total_accesses == 0) ? 0.0 : (static_cast<double>(stats.dram_hits) / static_cast<double>(stats.total_accesses)) * 100.0;
+      (stats.dram_accesses == 0) ? 0.0 : (static_cast<double>(stats.dram_hits) / static_cast<double>(stats.dram_accesses)) * 100.0;
     const double nvm_hit_rate =
-      (stats.total_accesses == 0) ? 0.0 : (static_cast<double>(stats.nvm_hits) / static_cast<double>(stats.total_accesses)) * 100.0;
+      (stats.nvm_accesses == 0) ? 0.0 : (static_cast<double>(stats.nvm_hits) / static_cast<double>(stats.nvm_accesses)) * 100.0;
     statsmap.emplace("dram hit rate", dram_hit_rate);
     statsmap.emplace("nvm hit rate", nvm_hit_rate);
 

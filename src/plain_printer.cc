@@ -124,10 +124,10 @@ std::vector<std::string> champsim::plain_printer::format(CACHE::stats_type stats
         fmt::format("cpu{}->{} AVERAGE MISS LATENCY: {} cycles", cpu, stats.name, ::print_ratio(stats.total_miss_latency_cycles, total_downstream_demands)));
   }
 
-  const double dram_hit_rate = (stats.total_accesses == 0) ? 0.0 : (static_cast<double>(stats.dram_hits) / static_cast<double>(stats.total_accesses)) * 100.0;
-  const double nvm_hit_rate = (stats.total_accesses == 0) ? 0.0 : (static_cast<double>(stats.nvm_hits) / static_cast<double>(stats.total_accesses)) * 100.0;
-  lines.push_back(fmt::format("{} DRAM HIT RATE: {:.2f}% ({}/{})", stats.name, dram_hit_rate, stats.dram_hits, stats.total_accesses));
-  lines.push_back(fmt::format("{} NVM HIT RATE: {:.2f}% ({}/{})", stats.name, nvm_hit_rate, stats.nvm_hits, stats.total_accesses));
+  const double dram_hit_rate = (stats.dram_accesses == 0) ? 0.0 : (static_cast<double>(stats.dram_hits) / static_cast<double>(stats.dram_accesses)) * 100.0;
+  const double nvm_hit_rate = (stats.nvm_accesses == 0) ? 0.0 : (static_cast<double>(stats.nvm_hits) / static_cast<double>(stats.nvm_accesses)) * 100.0;
+  lines.push_back(fmt::format("{} DRAM HIT RATE: {:.2f}% ({}/{})", stats.name, dram_hit_rate, stats.dram_hits, stats.dram_accesses));
+  lines.push_back(fmt::format("{} NVM HIT RATE: {:.2f}% ({}/{})", stats.name, nvm_hit_rate, stats.nvm_hits, stats.nvm_accesses));
 
   return lines;
 }

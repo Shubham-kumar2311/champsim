@@ -16,3 +16,13 @@ make clean && make && \
 bin/champsim --warmup-instructions 5000000 \
              --simulation-instructions 5000000 \
              traces/400.perlbench-41B.champsimtrace.xz > my_policy.txt
+
+
+sed -i 's/"replacement": *"[^"]*"/"replacement": "wbar"/' champsim_config.json && \
+./config.sh champsim_config.json && \
+make clean && make && \
+bin/champsim --warmup-instructions 5000000 \
+             --simulation-instructions 5000000 \
+             traces/400.perlbench-41B.champsimtrace.xz > wbar.txt
+
+

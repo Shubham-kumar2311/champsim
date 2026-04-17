@@ -7,17 +7,17 @@ Number of CPUs: 1
 Page size: 4096
 
 Off-chip DRAM Size: 64 GiB Channels: 4 Width: 64-bit Data Rate: 3205 MT/s
-Warmup finished CPU 0 instructions: 5000002 cycles: 1497912 cumulative IPC: 3.338 (Simulation time: 00 hr 00 min 17 sec)
-Warmup complete CPU 0 instructions: 5000002 cycles: 1497912 cumulative IPC: 3.338 (Simulation time: 00 hr 00 min 17 sec)
-Heartbeat CPU 0 instructions: 10000004 cycles: 9756183 heartbeat IPC: 1.025 cumulative IPC: 0.6055 (Simulation time: 00 hr 01 min 01 sec)
+Warmup finished CPU 0 instructions: 5000002 cycles: 1497912 cumulative IPC: 3.338 (Simulation time: 00 hr 00 min 21 sec)
+Warmup complete CPU 0 instructions: 5000002 cycles: 1497912 cumulative IPC: 3.338 (Simulation time: 00 hr 00 min 21 sec)
+Heartbeat CPU 0 instructions: 10000004 cycles: 9756183 heartbeat IPC: 1.025 cumulative IPC: 0.6055 (Simulation time: 00 hr 01 min 12 sec)
 ------------------------------
 ------------------------------
 NVM Writebacks: 13504
 DRAM Writebacks: 4570
 ------------------------------
 ------------------------------
-Simulation finished CPU 0 instructions: 5000002 cycles: 8258271 cumulative IPC: 0.6055 (Simulation time: 00 hr 01 min 01 sec)
-Simulation complete CPU 0 instructions: 5000002 cycles: 8258271 cumulative IPC: 0.6055 (Simulation time: 00 hr 01 min 01 sec)
+Simulation finished CPU 0 instructions: 5000002 cycles: 8258271 cumulative IPC: 0.6055 (Simulation time: 00 hr 01 min 12 sec)
+Simulation complete CPU 0 instructions: 5000002 cycles: 8258271 cumulative IPC: 0.6055 (Simulation time: 00 hr 01 min 12 sec)
 
 ChampSim completed all CPUs
 
@@ -44,8 +44,8 @@ cpu0->cpu0_STLB WRITE        ACCESS:          0 HIT:          0 MISS:          0
 cpu0->cpu0_STLB TRANSLATION  ACCESS:          0 HIT:          0 MISS:          0 MSHR_MERGE:          0
 cpu0->cpu0_STLB PREFETCH REQUESTED:          0 ISSUED:          0 USEFUL:          0 USELESS:          0
 cpu0->cpu0_STLB AVERAGE MISS LATENCY: 585.9 cycles
-cpu0_STLB DRAM HIT RATE: 26.94% (8371/31075)
-cpu0_STLB NVM HIT RATE: 67.05% (20837/31075)
+cpu0_STLB DRAM HIT RATE: 94.20% (8371/8886)
+cpu0_STLB NVM HIT RATE: 93.91% (20837/22189)
 cpu0->cpu0_L2C TOTAL        ACCESS:     103449 HIT:      75041 MISS:      28408 MSHR_MERGE:          0
 cpu0->cpu0_L2C LOAD         ACCESS:      82300 HIT:      58878 MISS:      23422 MSHR_MERGE:          0
 cpu0->cpu0_L2C RFO          ACCESS:       4076 HIT:       2700 MISS:       1376 MSHR_MERGE:          0
@@ -54,8 +54,8 @@ cpu0->cpu0_L2C WRITE        ACCESS:      13393 HIT:      13338 MISS:         55 
 cpu0->cpu0_L2C TRANSLATION  ACCESS:       3680 HIT:        125 MISS:       3555 MSHR_MERGE:          0
 cpu0->cpu0_L2C PREFETCH REQUESTED:          0 ISSUED:          0 USEFUL:          0 USELESS:          0
 cpu0->cpu0_L2C AVERAGE MISS LATENCY: 139.2 cycles
-cpu0_L2C DRAM HIT RATE: 16.08% (14484/90056)
-cpu0_L2C NVM HIT RATE: 52.43% (47219/90056)
+cpu0_L2C DRAM HIT RATE: 67.23% (14484/21543)
+cpu0_L2C NVM HIT RATE: 68.92% (47219/68513)
 cpu0->cpu0_L1I TOTAL        ACCESS:     462833 HIT:     411282 MISS:      51551 MSHR_MERGE:      12811
 cpu0->cpu0_L1I LOAD         ACCESS:     462833 HIT:     411282 MISS:      51551 MSHR_MERGE:      12811
 cpu0->cpu0_L1I RFO          ACCESS:          0 HIT:          0 MISS:          0 MSHR_MERGE:          0
@@ -64,8 +64,8 @@ cpu0->cpu0_L1I WRITE        ACCESS:          0 HIT:          0 MISS:          0 
 cpu0->cpu0_L1I TRANSLATION  ACCESS:          0 HIT:          0 MISS:          0 MSHR_MERGE:          0
 cpu0->cpu0_L1I PREFETCH REQUESTED:          0 ISSUED:          0 USEFUL:          0 USELESS:          0
 cpu0->cpu0_L1I AVERAGE MISS LATENCY: 14.14 cycles
-cpu0_L1I DRAM HIT RATE: 24.91% (115297/462921)
-cpu0_L1I NVM HIT RATE: 63.94% (295985/462921)
+cpu0_L1I DRAM HIT RATE: 93.02% (115297/123955)
+cpu0_L1I NVM HIT RATE: 90.77% (295985/326067)
 cpu0->cpu0_L1D TOTAL        ACCESS:    1755317 HIT:    1684879 MISS:      70438 MSHR_MERGE:      19123
 cpu0->cpu0_L1D LOAD         ACCESS:     928949 HIT:     876640 MISS:      52309 MSHR_MERGE:       8750
 cpu0->cpu0_L1D RFO          ACCESS:          0 HIT:          0 MISS:          0 MSHR_MERGE:          0
@@ -74,8 +74,8 @@ cpu0->cpu0_L1D WRITE        ACCESS:     822442 HIT:     807997 MISS:      14445 
 cpu0->cpu0_L1D TRANSLATION  ACCESS:       3926 HIT:        242 MISS:       3684 MSHR_MERGE:          4
 cpu0->cpu0_L1D PREFETCH REQUESTED:          0 ISSUED:          0 USEFUL:          0 USELESS:          0
 cpu0->cpu0_L1D AVERAGE MISS LATENCY: 80.3 cycles
-cpu0_L1D DRAM HIT RATE: 27.34% (255072/932907)
-cpu0_L1D NVM HIT RATE: 66.65% (621810/932907)
+cpu0_L1D DRAM HIT RATE: 95.54% (255072/266985)
+cpu0_L1D NVM HIT RATE: 94.62% (621810/657198)
 cpu0->cpu0_ITLB TOTAL        ACCESS:     395513 HIT:     391351 MISS:       4162 MSHR_MERGE:       2626
 cpu0->cpu0_ITLB LOAD         ACCESS:     395513 HIT:     391351 MISS:       4162 MSHR_MERGE:       2626
 cpu0->cpu0_ITLB RFO          ACCESS:          0 HIT:          0 MISS:          0 MSHR_MERGE:          0
@@ -84,8 +84,8 @@ cpu0->cpu0_ITLB WRITE        ACCESS:          0 HIT:          0 MISS:          0
 cpu0->cpu0_ITLB TRANSLATION  ACCESS:          0 HIT:          0 MISS:          0 MSHR_MERGE:          0
 cpu0->cpu0_ITLB PREFETCH REQUESTED:          0 ISSUED:          0 USEFUL:          0 USELESS:          0
 cpu0->cpu0_ITLB AVERAGE MISS LATENCY: 30.75 cycles
-cpu0_ITLB DRAM HIT RATE: 27.84% (110128/395513)
-cpu0_ITLB NVM HIT RATE: 71.10% (281223/395513)
+cpu0_ITLB DRAM HIT RATE: 99.72% (110128/110432)
+cpu0_ITLB NVM HIT RATE: 99.56% (281223/282455)
 cpu0->cpu0_DTLB TOTAL        ACCESS:    1657609 HIT:    1619050 MISS:      38559 MSHR_MERGE:       9020
 cpu0->cpu0_DTLB LOAD         ACCESS:    1657609 HIT:    1619050 MISS:      38559 MSHR_MERGE:       9020
 cpu0->cpu0_DTLB RFO          ACCESS:          0 HIT:          0 MISS:          0 MSHR_MERGE:          0
@@ -94,8 +94,8 @@ cpu0->cpu0_DTLB WRITE        ACCESS:          0 HIT:          0 MISS:          0
 cpu0->cpu0_DTLB TRANSLATION  ACCESS:          0 HIT:          0 MISS:          0 MSHR_MERGE:          0
 cpu0->cpu0_DTLB PREFETCH REQUESTED:          0 ISSUED:          0 USEFUL:          0 USELESS:          0
 cpu0->cpu0_DTLB AVERAGE MISS LATENCY: 40.76 cycles
-cpu0_DTLB DRAM HIT RATE: 19.48% (322915/1657609)
-cpu0_DTLB NVM HIT RATE: 78.19% (1296135/1657609)
+cpu0_DTLB DRAM HIT RATE: 97.60% (322915/330856)
+cpu0_DTLB NVM HIT RATE: 98.36% (1296135/1317733)
 cpu0->LLC TOTAL        ACCESS:      32774 HIT:      10241 MISS:      22533 MSHR_MERGE:          0
 cpu0->LLC LOAD         ACCESS:      23422 HIT:       4911 MISS:      18511 MSHR_MERGE:          0
 cpu0->LLC RFO          ACCESS:       1376 HIT:        472 MISS:        904 MSHR_MERGE:          0
@@ -104,8 +104,8 @@ cpu0->LLC WRITE        ACCESS:       4421 HIT:       4172 MISS:        249 MSHR_
 cpu0->LLC TRANSLATION  ACCESS:       3555 HIT:        686 MISS:       2869 MSHR_MERGE:          0
 cpu0->LLC PREFETCH REQUESTED:          0 ISSUED:          0 USEFUL:          0 USELESS:          0
 cpu0->LLC AVERAGE MISS LATENCY: 155.7 cycles
-LLC DRAM HIT RATE: 5.29% (1499/28353)
-LLC NVM HIT RATE: 16.12% (4570/28353)
+LLC DRAM HIT RATE: 21.24% (1499/7059)
+LLC NVM HIT RATE: 21.46% (4570/21294)
 
 DRAM Statistics
 
