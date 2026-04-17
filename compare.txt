@@ -1,0 +1,14 @@
+lru 
+NVM Writebacks: 14179
+DRAM Writebacks: 4531
+CPU 0 cumulative IPC: 0.6053 
+LLC DRAM HIT RATE: 5.36% (1519/28364)
+LLC NVM HIT RATE: 16.28% (4619/28364)
+
+
+my_policy
+NVM Writebacks: 13504
+DRAM Writebacks: 4570
+CPU 0 cumulative IPC: 0.6055
+LLC DRAM HIT RATE: 5.29% (1499/28353)
+LLC NVM HIT RATE: 16.12% (4570/28353)

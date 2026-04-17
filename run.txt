@@ -1,0 +1,18 @@
+./config config_lru.json 
+make
+
+bin/champsim --warmup-instructions 200000 --simulation-instructions 500000 traces/400.perlbench-41B.champsimtrace.xz > output1.txt
+
+sed -i 's/"replacement": *"[^"]*"/"replacement": "lru"/' champsim_config.json && \
+./config.sh champsim_config.json && \
+make clean && make && \
+bin/champsim --warmup-instructions 5000000 \
+             --simulation-instructions 5000000 \
+             traces/400.perlbench-41B.champsimtrace.xz > lru.txt
+
+sed -i 's/"replacement": *"[^"]*"/"replacement": "drrip"/' champsim_config.json && \
+./config.sh champsim_config.json && \
+make clean && make && \
+bin/champsim --warmup-instructions 5000000 \
+             --simulation-instructions 5000000 \
+             traces/400.perlbench-41B.champsimtrace.xz > my_policy.txt

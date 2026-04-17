@@ -1,0 +1,9 @@
+rule 1: never change anything without asking
+rule 2: always show a modification asking popup as in image.png at end of all tasks
+
+task 1: change formula of hit rate to 
+hits/that particular memory  access * 100 for both dram and nvm
+
+task 2: change logic of detection of nvm, currently it is using modulo chnage it like it get address of channel and fix one channel to dram
+
+task 3: follow rule 2
